@@ -25,18 +25,14 @@ const formatter = new Intl.NumberFormat('en-EN', {
 
 
 calculateBtn.addEventListener('click', function() {
-    renderGrossSalary()
-    renderHourlyWage()
+    renderSalary()
     renderHolidayValue()
 })
 
-function renderGrossSalary() {
-    grossSalaryValue.innerText = formatter.format(grossSalaryInput.value)
-}
-
-function renderHourlyWage() {
+function renderSalary() {
     const weeklyWage = grossSalaryInput.value / 52
     const hourlyWage = weeklyWage / weeklyHoursInput.value
+    grossSalaryValue.innerText = formatter.format(grossSalaryInput.value)
     hourlyWageValue.innerText = formatter.format(hourlyWage)
 }
 
@@ -44,12 +40,11 @@ function renderHolidayValue() {
     const dailyWage = grossSalaryInput.value / workingDays
     const holidayWage = dailyWage *  holidaysInput.value
     holidaysValue.innerText = formatter.format(holidayWage)
-
 }
 
-function renderPaternityValue() {
+// function renderPaternityValue() {
 
-}
+// }
 
 
 
