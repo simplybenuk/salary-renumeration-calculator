@@ -10,22 +10,45 @@
         <header>        
             <h1>Total Renumeration Calculator</h1>
         </header>
-        <section class="calculator">
+        <section id="calculator">
             <div class="input-value">
-                <label name="Net Salary" for="net-salary-input">Net Salary (£ per year)</label>
-                <input name="net-salary-input" id="net-salary-input" type="number" placeholder="0">
+                <label name="Gross Salary" for="gross-salary-input">Gross Salary (£ per year)</label>
+                <input name="gross-salary-input" id="gross-salary-input" type="number" placeholder="0">
             </div>
+            <div class="input-value">
+                <label name="Weekly hours" for="gross-salary-input">Contracted hours per week</label>
+                <input name="weekly-hours-input" id="weekly-hours-input" type="number" placeholder="0">
+            </div>
+
             <div class="input-value">
                 <label name="Holidays" for="holidays">Holidays (days per year)</label>
-                <input name="holidays" id="holidays" type="number" placeholder="0">
+                <input name="holidays-input" id="holidays-input" type="number" placeholder="0">
             </div>
             <!-- <div>
-                <label name="Net Salary" for="net-salary">Paternity leave (days)</label>
+                <label name="Gross Salary" for="gross-salary">Paternity leave (days)</label>
                 <input name="paternity-days" type="number">
             </div> -->
             <button id="calculate-btn">Calculate</button>
 
-            <p id="package-value">£0.00</p>
+        </section>
+        <section id="calculator-results">
+            <div class="calculator-result">
+                <p>Gross Salary</p>
+                <p id="gross-salary-value" class="result-value">£0.00</p>
+            </div>
+            <div class="calculator-result">
+                <p>Hourly wage</p>
+                <p id="hourly-wage-value" class="result-value">£0.00</p>
+            </div>
+            <div class="calculator-result">
+                <p>Total Holiday Value</p>
+                <p id="holidays-value" class="result-value">£0.00</p>
+            </div>
+            <!-- <div class="calculator-result">
+                <p>Total Paternity Value</p>
+                <p id="package-value" class="result-value"">£0.00</p>
+            </div> -->
+
         </section>
 
     <script src="index.js"></script>

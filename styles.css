@@ -22,7 +22,7 @@ header {
     text-align: center;
 }
 
-.calculator {
+#calculator, #calculator-results {
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -50,7 +50,7 @@ button {
     font-size: 24px;
 }
 
-#package-value {
+.result-value {
     border: 5px solid #ff8c42;
     border-radius: 5px;
     font-size: 36px;
@@ -58,5 +58,5 @@ button {
     padding: 20px;
     width: 400px;
     text-align: center;
-    margin-top: 0;
+    margin: 0;
 }
