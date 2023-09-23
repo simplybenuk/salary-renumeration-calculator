@@ -1,57 +1,53 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <header>        
-            <h1>Total Renumeration Calculator</h1>
-        </header>
-        <section id="calculator">
-            <div class="input-value">
-                <label name="Gross Salary" for="gross-salary-input">Gross Salary (£ per year)</label>
-                <input name="gross-salary-input" id="gross-salary-input" type="number" placeholder="0">
-            </div>
-            <div class="input-value">
-                <label name="Weekly hours" for="gross-salary-input">Contracted hours per week</label>
-                <input name="weekly-hours-input" id="weekly-hours-input" type="number" placeholder="0">
-            </div>
+<head>
+  <title>Effective Salary Calculator</title>
+</head>
+<body>
 
-            <div class="input-value">
-                <label name="Holidays" for="holidays">Holidays (days per year)</label>
-                <input name="holidays-input" id="holidays-input" type="number" placeholder="0">
-            </div>
-            <!-- <div>
-                <label name="Gross Salary" for="gross-salary">Paternity leave (days)</label>
-                <input name="paternity-days" type="number">
-            </div> -->
-            <button id="calculate-btn">Calculate</button>
+  <h1>Effective Salary Calculator</h1>
 
-        </section>
-        <section id="calculator-results">
-            <div class="calculator-result">
-                <p>Gross Salary</p>
-                <p id="gross-salary-value" class="result-value">£0.00</p>
-            </div>
-            <div class="calculator-result">
-                <p>Hourly wage</p>
-                <p id="hourly-wage-value" class="result-value">£0.00</p>
-            </div>
-            <div class="calculator-result">
-                <p>Total Holiday Value</p>
-                <p id="holidays-value" class="result-value">£0.00</p>
-            </div>
-            <!-- <div class="calculator-result">
-                <p>Total Paternity Value</p>
-                <p id="package-value" class="result-value"">£0.00</p>
-            </div> -->
+  <!-- Section for Job 1 -->
+  <section id="job1">
+    <h2>Job 1</h2>
+    <label for="basicSalary1">Basic Salary (£):</label>
+    <input type="number" id="basicSalary1"><br>
 
-        </section>
+    <label for="employerPension1">Employer Pension Contribution (%):</label>
+    <input type="number" id="employerPension1"><br>
 
-    <script src="index.js"></script>
-    </body>
-    
+    <label for="annualLeave1">Annual Leave (days):</label>
+    <input type="number" id="annualLeave1"><br>
+
+    <label for="parentalLeave1">Parental Leave (weeks):</label>
+    <input type="number" id="parentalLeave1"><br>
+  </section>
+
+  <!-- Section for Job 2 -->
+  <section id="job2">
+    <h2>Job 2</h2>
+    <label for="basicSalary2">Basic Salary (£):</label>
+    <input type="number" id="basicSalary2"><br>
+
+    <label for="employerPension2">Employer Pension Contribution (%):</label>
+    <input type="number" id="employerPension2"><br>
+
+    <label for="annualLeave2">Annual Leave (days):</label>
+    <input type="number" id="annualLeave2"><br>
+
+    <label for="parentalLeave2">Parental Leave (weeks):</label>
+    <input type="number" id="parentalLeave2"><br>
+  </section>
+
+  <!-- Calculate Button -->
+  <button id="calculate">Calculate</button>
+
+  <!-- Display Results -->
+  <h2>Results</h2>
+  <div id="results">
+    <!-- Results will be populated here -->
+  </div>
+  <script src="index.js"></script>
+</body>
 </html>
+

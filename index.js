@@ -1,55 +1,54 @@
-const calculateBtn = document.getElementById('calculate-btn')
-const grossSalaryInput = document.getElementById('gross-salary-input')
-const grossSalaryValue = document.getElementById('gross-salary-value')
-const weeklyHoursInput = document.getElementById('weekly-hours-input')
-const hourlyWageValue = document.getElementById('hourly-wage-value')
-const holidaysInput = document.getElementById('holidays-input')
-const holidaysValue = document.getElementById('holidays-value')
+function calculateEffectiveSalary() {
+  // Get values for Job 1
+  const basicSalary1 = parseFloat(document.getElementById('basicSalary1').value);
+  const employerPension1 = parseFloat(document.getElementById('employerPension1').value);
+  const annualLeave1 = parseFloat(document.getElementById('annualLeave1').value);
+  const parentalLeave1 = parseFloat(document.getElementById('parentalLeave1').value);
 
-const workingDays = 260
+  // Get values for Job 2
+  const basicSalary2 = parseFloat(document.getElementById('basicSalary2').value);
+  const employerPension2 = parseFloat(document.getElementById('employerPension2').value);
+  const annualLeave2 = parseFloat(document.getElementById('annualLeave2').value);
+  const parentalLeave2 = parseFloat(document.getElementById('parentalLeave2').value);
 
+  // Calculate pension contributions for both jobs
+  const pensionContribution1 = basicSalary1 * (employerPension1 / 100);
+  const pensionContribution2 = basicSalary2 * (employerPension2 / 100);
 
+  // Calculate annual leave value for both jobs (assuming 260 workdays a year)
+  const annualLeaveValue1 = (basicSalary1 / 260) * annualLeave1;
+  const annualLeaveValue2 = (basicSalary2 / 260) * annualLeave2;
 
-function holidayPay() {
-    daySalary = grossSalary / workingDays
-    let holidayDays = document.getElementById('holidays').value
-    holidayDaysSalary = holidayDays * daySalary
-    
+  // Calculate parental leave value for both jobs (assuming 52 workweeks a year)
+  const parentalLeaveValue1 = (basicSalary1 / 52) * parentalLeave1;
+  const parentalLeaveValue2 = (basicSalary2 / 52) * parentalLeave2;
+
+  // Calculate the effective salary for both jobs (excluding parental leave)
+  const effectiveSalary1 = basicSalary1 + pensionContribution1 + annualLeaveValue1;
+  const effectiveSalary2 = basicSalary2 + pensionContribution2 + annualLeaveValue2;
+
+  // Display the results with breakdown
+  const resultsDiv = document.getElementById('results');
+  resultsDiv.innerHTML = `
+    <h3>Effective Salary for Job 1: £${effectiveSalary1.toFixed(2)}</h3>
+    <ul>
+      <li>Basic Salary: £${basicSalary1.toFixed(2)}</li>
+      <li>Employer Pension Contribution: £${pensionContribution1.toFixed(2)}</li>
+      <li>Annual Leave Value: £${annualLeaveValue1.toFixed(2)}</li>
+    </ul>
+    <h3>Effective Salary for Job 2: £${effectiveSalary2.toFixed(2)}</h3>
+    <ul>
+      <li>Basic Salary: £${basicSalary2.toFixed(2)}</li>
+      <li>Employer Pension Contribution: £${pensionContribution2.toFixed(2)}</li>
+      <li>Annual Leave Value: £${annualLeaveValue2.toFixed(2)}</li>
+    </ul>
+    <h3>Other Benefits</h3>
+    <ul>
+      <li>Parental Leave Value for Job 1: £${parentalLeaveValue1.toFixed(2)}</li>
+      <li>Parental Leave Value for Job 2: £${parentalLeaveValue2.toFixed(2)}</li>
+    </ul>
+  `;
 }
 
-const formatter = new Intl.NumberFormat('en-EN', {
-    style: 'currency',
-    currency: 'GBP',
-  });
-
-
-
-calculateBtn.addEventListener('click', function() {
-    renderSalary()
-    renderHolidayValue()
-})
-
-function renderSalary() {
-    const weeklyWage = grossSalaryInput.value / 52
-    const hourlyWage = weeklyWage / weeklyHoursInput.value
-    grossSalaryValue.innerText = formatter.format(grossSalaryInput.value)
-    hourlyWageValue.innerText = formatter.format(hourlyWage)
-}
-
-function renderHolidayValue() {
-    const dailyWage = grossSalaryInput.value / workingDays
-    const holidayWage = dailyWage *  holidaysInput.value
-    holidaysValue.innerText = formatter.format(holidayWage)
-}
-
-// function renderPaternityValue() {
-
-// }
-
-
-
-
-
-
-
-
+// Add event listener to the "Calculate" button
+document.getElementById('calculate').addEventListener('click', calculateEffectiveSalary);
