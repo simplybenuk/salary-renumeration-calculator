@@ -40,29 +40,29 @@ function calculateEffectiveSalary() {
     <h2 class="govuk-heading-l">Results</h2>
     <div class="container">
       <section class="govuk-section">
-        <h3>Effective Salary for Job 1: £${effectiveSalary1.toFixed(2)}</h3>
+        <h3>Effective Salary for Job 1: £${Number(effectiveSalary1.toFixed(2)).toLocaleString()}</h3>
         <ul>
-          <li>Basic Salary: £${basicSalary1.toFixed(2)}</li>
-          <li>Employer Pension Contribution: £${pensionContribution1.toFixed(2)}</li>
-          <li>Annual Leave Value: £${annualLeaveValue1.toFixed(2)}</li>
+          <li>Basic Salary: £${Number(basicSalary1.toFixed(2)).toLocaleString()}</li>
+          <li>Employer Pension Contribution: £${Number(pensionContribution1.toFixed(2)).toLocaleString()}</li>
+          <li>Annual Leave Value: £${Number(annualLeaveValue1.toFixed(2)).toLocaleString()}</li>
         </ul>
         <h3>Other Benefits</h3>
         <ul>
-          <li>Parental Leave Value for Job 1: £${parentalLeaveValue1.toFixed(2)}</li>
-          <li>4-Day Week Value for Job 1: £${fourDayWeekValue1.toFixed(2)}</li>
+          <li>Parental Leave Value for Job 1: £${Number(parentalLeaveValue1.toFixed(2)).toLocaleString()}</li>
+          <li>4-Day Week Value for Job 1: £${Number(fourDayWeekValue1.toFixed(2)).toLocaleString()}</li>
         </ul>
       </section>
       <section class="govuk-section">
-        <h3>Effective Salary for Job 2: £${effectiveSalary2.toFixed(2)}</h3>
+        <h3>Effective Salary for Job 2: £${Number(effectiveSalary2.toFixed(2)).toLocaleString()}</h3>
         <ul>
-          <li>Basic Salary: £${basicSalary2.toFixed(2)}</li>
-          <li>Employer Pension Contribution: £${pensionContribution2.toFixed(2)}</li>
-          <li>Annual Leave Value: £${annualLeaveValue2.toFixed(2)}</li>
+          <li>Basic Salary: £${Number(basicSalary2.toFixed(2)).toLocaleString()}</li>
+          <li>Employer Pension Contribution: £${Number(pensionContribution2.toFixed(2)).toLocaleString()}</li>
+          <li>Annual Leave Value: £${Number(annualLeaveValue2.toFixed(2)).toLocaleString()}</li>
         </ul>
         <h3>Other Benefits</h3>
         <ul>
-          <li>Parental Leave Value for Job 2: £${parentalLeaveValue2.toFixed(2)}</li>
-          <li>4-Day Week Value for Job 2: £${fourDayWeekValue2.toFixed(2)}</li>
+          <li>Parental Leave Value for Job 2: £${Number(parentalLeaveValue2.toFixed(2)).toLocaleString()}</li>
+          <li>4-Day Week Value for Job 2: £${Number(fourDayWeekValue2.toFixed(2)).toLocaleString()}</li>
         </ul>
       </section>
     </div>
