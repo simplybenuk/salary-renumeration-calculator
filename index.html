@@ -1,52 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Effective Salary Calculator</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="govuk-body">
 
-  <h1>Effective Salary Calculator</h1>
+  <header class="govuk-header" role="banner">
+    <h1 class="govuk-header__title">Effective Salary Calculator</h1>
+  </header>
+  <section class="container">
+    <p><strong>Disclaimer:</strong> This calculator is for illustration purposes only and should not be considered as financial advice.</p>   
+  </section>
+  <div class="container">
+    <section id="job1" class="govuk-section">
+      <section>
+        <h2 class="govuk-heading-l">Job 1</h2>
+        <div class="input-group">
+          <label for="basicSalary1" class="govuk-label">Basic Salary (£):</label>
+          <input type="number" id="basicSalary1" class="govuk-input">
+        </div>
+  
+        <div class="input-group">
+          <label for="employerPension1" class="govuk-label">Employer Pension Contribution (%):</label>
+          <input type="number" id="employerPension1" class="govuk-input">
+        </div>
+  
+        <div class="input-group">
+          <label for="annualLeave1" class="govuk-label">Annual Leave (days):</label>
+          <input type="number" id="annualLeave1" class="govuk-input">
+        </div>
+      </section>
+          <!-- Section for Parental Leave and 4-day week option for Job 1 -->
+      <section id="otherJob1">
+        <h2 class="govuk-heading-l">Other benefits</h2>
+        <div class="input-group">
+          <label for="parentalLeave1" class="govuk-label">Parental Leave (weeks):</label>
+          <input type="number" id="parentalLeave1" class="govuk-input">
+        </div>
 
+        <div class="input-group four-day-week-input-group">
+          <label for="fourDayWeek1" class="govuk-label four-day-week-input-group-item">Is this a 4-day week job?</label>
+          <input type="checkbox" id="fourDayWeek1" class="govuk-input four-day-week-input-group-item">
+        </div>
+      </section>
+    </section>
+
+
+    <!-- Section for Job 2 -->
+    <section id="job2" class="govuk-section">
+      <section>
+        <h2 class="govuk-heading-l">Job 2</h2>
+        <div class="input-group">
+          <label for="basicSalary2" class="govuk-label">Basic Salary (£):</label>
+          <input type="number" id="basicSalary2" class="govuk-input">
+        </div>
+
+        <div class="input-group">
+          <label for="employerPension2" class="govuk-label">Employer Pension Contribution (%):</label>
+          <input type="number" id="employerPension2" class="govuk-input">
+        </div>
+
+        <div class="input-group">
+          <label for="annualLeave2" class="govuk-label">Annual Leave (days):</label>
+          <input type="number" id="annualLeave2" class="govuk-input">
+        </div>
+      </section>
+      <!-- Section for Parental Leave and 4-day week option for Job 2 -->
+      <section id="otherJob2">
+        <h2 class="govuk-heading-l">Other benefits</h2>
+        <div class="input-group">
+          <label for="parentalLeave2" class="govuk-label">Parental Leave (weeks):</label>
+          <input type="number" id="parentalLeave2" class="govuk-input">
+        </div>
+
+        <div class="input-group four-day-week-input-group">
+          <label for="fourDayWeek2" class="govuk-label">Is this a 4-day week job?</label>
+          <input type="checkbox" id="fourDayWeek2" class="govuk-input four-day-week-input-group-item">
+        </div>
+      </section>
+    </section>
+  </div>
   <!-- Section for Job 1 -->
-  <section id="job1">
-    <h2>Job 1</h2>
-    <label for="basicSalary1">Basic Salary (£):</label>
-    <input type="number" id="basicSalary1"><br>
-
-    <label for="employerPension1">Employer Pension Contribution (%):</label>
-    <input type="number" id="employerPension1"><br>
-
-    <label for="annualLeave1">Annual Leave (days):</label>
-    <input type="number" id="annualLeave1"><br>
-
-    <label for="parentalLeave1">Parental Leave (weeks):</label>
-    <input type="number" id="parentalLeave1"><br>
-  </section>
-
-  <!-- Section for Job 2 -->
-  <section id="job2">
-    <h2>Job 2</h2>
-    <label for="basicSalary2">Basic Salary (£):</label>
-    <input type="number" id="basicSalary2"><br>
-
-    <label for="employerPension2">Employer Pension Contribution (%):</label>
-    <input type="number" id="employerPension2"><br>
-
-    <label for="annualLeave2">Annual Leave (days):</label>
-    <input type="number" id="annualLeave2"><br>
-
-    <label for="parentalLeave2">Parental Leave (weeks):</label>
-    <input type="number" id="parentalLeave2"><br>
-  </section>
 
   <!-- Calculate Button -->
-  <button id="calculate">Calculate</button>
+  <div class="btn-container">
+    <button id="calculate" class="govuk-button">Calculate</button>
+  </div>
 
   <!-- Display Results -->
-  <h2>Results</h2>
-  <div id="results">
+  <div id="results" class="govuk-results">
     <!-- Results will be populated here -->
   </div>
+  <section class="how-it-works">
+    <h2>How It Works</h2>
+    <ul>
+      <li><strong>Basic Salary:</strong> The base annual salary for the job.</li>
+      <li><strong>Employer Pension Contribution:</strong> Calculated as (Basic Salary * Employer Pension Rate / 100).</li>
+      <li><strong>Annual Leave Value:</strong> Calculated as (Basic Salary / 260 workdays) * Annual Leave Days.</li>
+      <li><strong>Parental Leave Value:</strong> Calculated as (Basic Salary / 52 workweeks) * Parental Leave Weeks.</li>
+      <li><strong>4-Day Week Value:</strong> For jobs offering a 4-day workweek, the value is calculated as (Basic Salary / 260 workdays) * 52 days.</li>
+    </ul>
+  </section>
+  
   <script src="index.js"></script>
 </body>
 </html>

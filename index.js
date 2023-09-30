@@ -1,15 +1,22 @@
+// Function to calculate the effective salary and other benefits
 function calculateEffectiveSalary() {
   // Get values for Job 1
   const basicSalary1 = parseFloat(document.getElementById('basicSalary1').value);
   const employerPension1 = parseFloat(document.getElementById('employerPension1').value);
   const annualLeave1 = parseFloat(document.getElementById('annualLeave1').value);
   const parentalLeave1 = parseFloat(document.getElementById('parentalLeave1').value);
+  const fourDayWeek1 = document.getElementById('fourDayWeek1').checked;
 
   // Get values for Job 2
   const basicSalary2 = parseFloat(document.getElementById('basicSalary2').value);
   const employerPension2 = parseFloat(document.getElementById('employerPension2').value);
   const annualLeave2 = parseFloat(document.getElementById('annualLeave2').value);
   const parentalLeave2 = parseFloat(document.getElementById('parentalLeave2').value);
+  const fourDayWeek2 = document.getElementById('fourDayWeek2').checked;
+
+  // Calculate the value of a 4-day week (assuming 260 workdays a year)
+  const fourDayWeekValue1 = fourDayWeek1 ? (basicSalary1 / 260) * 52 : 0;
+  const fourDayWeekValue2 = fourDayWeek2 ? (basicSalary2 / 260) * 52 : 0;
 
   // Calculate pension contributions for both jobs
   const pensionContribution1 = basicSalary1 * (employerPension1 / 100);
@@ -30,23 +37,35 @@ function calculateEffectiveSalary() {
   // Display the results with breakdown
   const resultsDiv = document.getElementById('results');
   resultsDiv.innerHTML = `
-    <h3>Effective Salary for Job 1: £${effectiveSalary1.toFixed(2)}</h3>
-    <ul>
-      <li>Basic Salary: £${basicSalary1.toFixed(2)}</li>
-      <li>Employer Pension Contribution: £${pensionContribution1.toFixed(2)}</li>
-      <li>Annual Leave Value: £${annualLeaveValue1.toFixed(2)}</li>
-    </ul>
-    <h3>Effective Salary for Job 2: £${effectiveSalary2.toFixed(2)}</h3>
-    <ul>
-      <li>Basic Salary: £${basicSalary2.toFixed(2)}</li>
-      <li>Employer Pension Contribution: £${pensionContribution2.toFixed(2)}</li>
-      <li>Annual Leave Value: £${annualLeaveValue2.toFixed(2)}</li>
-    </ul>
-    <h3>Other Benefits</h3>
-    <ul>
-      <li>Parental Leave Value for Job 1: £${parentalLeaveValue1.toFixed(2)}</li>
-      <li>Parental Leave Value for Job 2: £${parentalLeaveValue2.toFixed(2)}</li>
-    </ul>
+    <h2 class="govuk-heading-l">Results</h2>
+    <div class="container">
+      <section class="govuk-section">
+        <h3>Effective Salary for Job 1: £${effectiveSalary1.toFixed(2)}</h3>
+        <ul>
+          <li>Basic Salary: £${basicSalary1.toFixed(2)}</li>
+          <li>Employer Pension Contribution: £${pensionContribution1.toFixed(2)}</li>
+          <li>Annual Leave Value: £${annualLeaveValue1.toFixed(2)}</li>
+        </ul>
+        <h3>Other Benefits</h3>
+        <ul>
+          <li>Parental Leave Value for Job 1: £${parentalLeaveValue1.toFixed(2)}</li>
+          <li>4-Day Week Value for Job 1: £${fourDayWeekValue1.toFixed(2)}</li>
+        </ul>
+      </section>
+      <section class="govuk-section">
+        <h3>Effective Salary for Job 2: £${effectiveSalary2.toFixed(2)}</h3>
+        <ul>
+          <li>Basic Salary: £${basicSalary2.toFixed(2)}</li>
+          <li>Employer Pension Contribution: £${pensionContribution2.toFixed(2)}</li>
+          <li>Annual Leave Value: £${annualLeaveValue2.toFixed(2)}</li>
+        </ul>
+        <h3>Other Benefits</h3>
+        <ul>
+          <li>Parental Leave Value for Job 2: £${parentalLeaveValue2.toFixed(2)}</li>
+          <li>4-Day Week Value for Job 2: £${fourDayWeekValue2.toFixed(2)}</li>
+        </ul>
+      </section>
+    </div>
   `;
 }
 
