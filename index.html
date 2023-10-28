@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Effective Salary Calculator</title>
+  <title>Effective Salary Calculator | Calculate Your Salary Including Benefits</title>
+  <meta name="description" content="Our Effective Salary Calculator helps you calculate your salary including benefits such as pension contributions and annual leave. Understand your true earnings today.">
+  <meta property="og:title" content="Effective Salary Calculator | Calculate Your Salary Including Benefits">
+  <meta property="og:description" content="Our Effective Salary Calculator helps you calculate your salary including benefits such as pension contributions and annual leave. Understand your true earnings today.">
+  <meta property="og:image" content="/OG-effective-salary.png"> <!-- Replace IMAGE_URL with the URL of the image you want to display -->
+  <meta property="og:url" content="https://effectivesalary.co.uk/"> <!-- Replace WEBSITE_URL with the URL of your website -->
+  <link rel="canonical" href="https://effectivesalary.co.uk/">
   <link rel="stylesheet" href="styles.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1011995014050109"
      crossorigin="anonymous"></script>
@@ -13,10 +19,10 @@
   <header class="govuk-header" role="banner">
     <h1 class="govuk-header__title">Effective Salary Calculator</h1>
   </header>
-  <section class="container">
+  <section class="container text-margin">
     <p><strong>Disclaimer:</strong> This calculator is for illustration purposes only and should not be considered as financial advice.</p>   
   </section>
-  <div class="container">
+  <main class="container">
     <section id="job1" class="govuk-section">
       <section>
         <h2 class="govuk-heading-l">Job 1</h2>
@@ -84,7 +90,7 @@
         </div>
       </section>
     </section>
-  </div>
+  </main>
   <!-- Section for Job 1 -->
 
   <!-- Calculate Button -->
@@ -96,16 +102,16 @@
   <div id="results" class="govuk-results">
     <!-- Results will be populated here -->
   </div>
-  <section class="how-it-works">
+  <section class="how-it-works text-margin">
     <h2>How It Works</h2>
     <ul>
       <li><strong>Basic Salary:</strong> The base annual salary for the job.</li>
-      <li><strong>Employer Pension Contribution:</strong> Calculated as (Basic Salary * Employer Pension Rate / 100).</li>
-      <li><strong>Annual Leave Value:</strong> Calculated as (Basic Salary / 260 workdays) * Annual Leave Days.</li>
-      <li><strong>Parental Leave Value:</strong> Calculated as (Basic Salary / 52 workweeks) * Parental Leave Weeks.</li>
-      <li><strong>4-Day Week Value:</strong> For jobs offering a 4-day workweek, the value is calculated as (Basic Salary / 260 workdays) * 52 days.</li>
+      <li><strong>Employer Pension Contribution:</strong> Calculated as [(Basic Salary + Annual Bonus) * Employer Pension Rate / 100].</li>
+      <li><strong>Annual Leave Value:</strong> Calculated as [(Basic Salary + Annual Bonus) / (260 workdays - Annual Leave Days)] * Annual Leave Days.</li>
+      <li><strong>Parental Leave Value:</strong> Calculated as [(Basic Salary + Annual Bonus) / (52 workweeks - Parental Leave Weeks)] * Parental Leave Weeks.</li>
+      <li><strong>4-Day Week Value:</strong> For jobs offering a 4-day workweek, the value is calculated as (Basic Salary + Annual Bonus) / (260 workdays - (52 * 1)) * (52 * 1).</li>
     </ul>
-  </section>
+  </section>  
   
   <script src="index.js"></script>
 </body>
